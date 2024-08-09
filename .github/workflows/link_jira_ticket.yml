@@ -17,8 +17,8 @@ jobs:
         run: |
           PR_LINK="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/pull/${{ github.event.pull_request.number }}"
           COMMENT="Pull request opened: [${PR_LINK}](${PR_LINK})"
-          curl -X POST -u email@example.com:${{ secrets.JIRA_API_TOKEN }} \
+          curl -X POST -u minhthy0120032003@gmail.com:${{ secrets.JIRA_API_TOKEN }} \
             -H "Content-Type: application/json" \
             -d '{"body": "'"$COMMENT"'"}' \
-            "https://your-jira-instance.atlassian.net/rest/api/2/issue/${{ steps.extract_id.outputs.JIRA_ID }}/comment"
+            "https://minhthy0120032003.atlassian.net/rest/api/2/issue/${{ steps.extract_id.outputs.JIRA_ID }}/comment"
         shell: bash
