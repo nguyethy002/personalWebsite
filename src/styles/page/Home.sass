@@ -1,0 +1,92 @@
+@import "../general"
+
+.home-container
+  @extend .common-spacing
+  @apply w-full relative
+  @apply text-yellow-800
+  @apply overflow-hidden
+  h1
+    @extend .common-h1
+  h2
+    @extend .common-h2
+  p
+    @extend .common-text
+  .home
+    @apply flex flex-col
+    @apply justify-center items-center
+    @apply w-full flex-grow
+    @apply p-4
+    // @screen lg
+    //   @apply flex flex-row
+    //   @apply justify-around items-center
+    .content
+      @apply flex flex-col
+      @apply justify-center
+      @apply text-center
+      @apply h-full
+      @screen lg
+        @apply text-left
+      .type-writer
+        @apply leading-loose
+      .name,h2
+        @apply flex flex-row
+        h1:nth-child(2)
+          @apply text-green-700
+          @apply mx-1
+        @apply overflow-hidden
+        @apply border-r-2 border-solid
+        // @apply whitespace-no-wrap
+        animation: typing 2s steps(40, end),blink-caret .75s step-end infinite
+      h2
+        max-width: fit-content
+      @keyframes typing
+        from
+          width: 0
+        to
+          width: 100%
+      @keyframes blink-caret
+        from, to
+          @apply border-transparent
+        50%
+          @apply border-yellow-700
+  .wave
+    @apply bottom-0 left-0
+    @apply w-full 
+    @apply absolute
+    background: url('../../asset/Wave.png')
+    height: 100px
+    background-size: 1000px 100px
+  .wave1
+    animation: wave 30s linear infinite
+    z-index: 1000
+    opacity: 1
+    animation-delay: 0s
+    bottom: 0
+  .wave2
+    animation: wave2 15s linear infinite
+    z-index: 999
+    opacity: 0.5
+    animation-delay: -5s
+    bottom: 10px
+  .wave3
+    animation: wave 30s linear infinite
+    z-index: 998
+    opacity: 0.2
+    animation-delay: -2s
+    bottom: 15px
+  .wave4
+    animation: wave2 5s linear infinite
+    z-index: 997
+    opacity: 0.7
+    animation-delay: -5s
+    bottom: 20px
+@keyframes wave
+  0%
+    background-position-x: 0 
+  100%
+    background-position-x: 1000px
+@keyframes wave2
+  0%
+    background-position-x: 0 
+  100%
+    background-position-x: -1000px
